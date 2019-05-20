@@ -1,26 +1,26 @@
-User.create!(name:  "Le van tri",
- email: "vantri.dev@gmail.com",
- password: "123456",
- password_confirmation: "123456",
- address: "Quang Nam",
- phone: "12345678",
- role: 1,
- activated: true
- )
+# User.create!(name:  "Le van tri",
+#  email: "vantri.dev@gmail.com",
+#  password: "123456",
+#  password_confirmation: "123456",
+#  address: "Quang Nam",
+#  phone: "12345678",
+#  role: 1,
+#  activated: true
+#  )
 
-20.times do |n|
-  name  = Faker::Name.name
-  email = "example#{n+1}@railstutorial.org"
-  password = "password"
-  User.create!(name:  name,
-   email: email,
-   password:password,
-   password_confirmation: password,
-   address: "Quang Nam",
-   phone: "12345678",
-   role: 0,
-   activated: true)
-end
+# 20.times do |n|
+#   name  = Faker::Name.name
+#   email = "example#{n+1}@railstutorial.org"
+#   password = "password"
+#   User.create!(name:  name,
+#    email: email,
+#    password:password,
+#    password_confirmation: password,
+#    address: "Quang Nam",
+#    phone: "12345678",
+#    role: 0,
+#    activated: true)
+# end
 
 # Category.create!(name: "Foods", status: 1)
 # Category.create!(name: "Drinks", status: 1)
@@ -238,22 +238,22 @@ Category.create!(name: "Drinks", status: 1)
 #   )
 # end
 
-# 25.times do |n|
-#   category_id = 2
-#   name = "Drinks#{n+1}"
-#   price = 333
-#   quantity = 10
-#   description = "Ngon, bổ, rẻ"
-#   picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr00SZ8iUGqQxytSec-jdmILhkUwL36D2aWsrhByx7Qooamf1W"
-#   avg_rating = 4.3
+25.times do |n|
+  category_id = 2
+  name = "Drinks#{n+1}"
+  price = 333
+  quantity = 10
+  description = "Ngon, bổ, rẻ"
+  picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr00SZ8iUGqQxytSec-jdmILhkUwL36D2aWsrhByx7Qooamf1W"
+  avg_rating = 4.3
 
-#   Product.create!(
-#     category_id: category_id,
-#     name: name,
-#     price: price,
-#     quantity: quantity,
-#     description: description,
-#     avg_rating: avg_rating,
-#     picture: picture
-#   )
-# end
+  Product.create!(
+    category_id: category_id,
+    name: name,
+    price: price,
+    quantity: quantity,
+    description: description,
+    avg_rating: avg_rating,
+    picture: picture
+  )
+end

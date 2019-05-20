@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource class: Order
 
   def index
     @order = current_user.orders.waiting.first
@@ -28,13 +29,6 @@ class CartsController < ApplicationController
   def show
     @order = Order.find_by id: params[:id]
     return if @order
-    flash[:info] = t "controllers.cart.order_not_exitst"
-    redirect_to root_path
-  end
-
-  def show
-    @order = Order.find_by id: params[:id]
-    return @order
     flash[:info] = t "controllers.cart.order_not_exitst"
     redirect_to root_path
   end
