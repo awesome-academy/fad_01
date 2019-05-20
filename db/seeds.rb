@@ -150,8 +150,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.create!(name: "Foods", status: 1)
-Category.create!(name: "Drinks", status: 1)
+# Category.create!(name: "Foods", status: 1)
+# Category.create!(name: "Drinks", status: 1)
 
 # 25.times do |n|
 #   category_id = 1

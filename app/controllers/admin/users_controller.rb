@@ -3,8 +3,14 @@ class Admin::UsersController < ApplicationController
   before_action :load_user, except: %i(index create new)
 
   def index
-    @user = User.paginate(page: params[:page],
+    @search = User.ransack(params[:q])
+    @user = @search.result(distinct: true).paginate(page: params[:page],
       per_page: Settings.app.admin.users.per_page).asc_name
+    @search.build_condition
+    respond_to do |format|
+      format.html{}
+      format.js
+    end
   end
 
   def destroy

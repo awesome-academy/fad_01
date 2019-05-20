@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "users/show", to: "users/registrations#show"
   end
+
+  post "/search", to: "admin/users#index"
 end

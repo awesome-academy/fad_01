@@ -303,6 +303,7 @@ en:
         block: "Block"
         unblock: "Unblock"
         cancel: "Cancel"
+        search: "Search"
       edit:
         title: "Admin update"
     orders:
