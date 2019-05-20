@@ -9,6 +9,10 @@ gem "bootstrap-sass", "3.3.7"
 gem "carrierwave", "1.2.2"
 gem "coffee-rails", "~> 4.2"
 gem "config"
+<<<<<<< HEAD
+=======
+gem "cancancan"
+>>>>>>> cancancan
 gem "devise", "~> 4.2"
 gem "faker", "1.7.3"
 gem "figaro"

@@ -11,6 +11,19 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
+<<<<<<< HEAD
+=======
+  devise_scope :user do
+    get "signin" => "devise/sessions#new"
+    post "signin" => "devise/sessions#create"
+    get "signout" => "devise/sessions#destroy"
+  end
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
+
+>>>>>>> cancancan
   resources :users
   resources :account_activations, only: :edit
   resources :products, only: %i(index show) do
