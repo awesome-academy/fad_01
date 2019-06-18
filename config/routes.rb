@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-  resources :users
   resources :account_activations, only: :edit
   resources :products, only: %i(index show) do
     resources :comments
@@ -27,4 +25,11 @@ Rails.application.routes.draw do
   end
   resources :sugests
   resources :categories
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions', registrations: "users/registrations",
+    confirmations: "users/confirmations", passwords: "users/passwords" }
+  devise_scope :user do
+    get "users/show", to: "users/registrations#show"
+  end
 end

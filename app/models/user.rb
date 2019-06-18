@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable, :lockable,
+         :timeoutable
   attr_accessor :activation_token
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -20,7 +25,7 @@ class User < ApplicationRecord
   validates :phone, presence: true,
              length: {maximum: Settings.app.user.phone_max_length},
              format: {with: VALID_PHONE_REGEX}
-  has_secure_password
+  # has_secure_password
   validates :password, presence: true,
              length: {minimum: Settings.app.user.password_min_length},
              allow_nil: true

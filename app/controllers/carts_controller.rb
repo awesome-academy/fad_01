@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :check_loggin
+  before_action :authenticate_user!
 
   def index
     @order = current_user.orders.waiting.first
