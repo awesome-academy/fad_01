@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :load_user, except: %i(index create new)
   before_action :logged_in_user, except: %i(new show create)
+  authorize_resource
   before_action :correct_user, only: %i(edit update)
 
   def new

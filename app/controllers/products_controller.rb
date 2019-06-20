@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   include ProductsHelper
   before_action :load_filter, only: :index
   before_action :load_product, only: :show
-
+  authorize_resource
   def index
     load_products
     @cur_slide_items = load_trend_items.take(Settings.products.cur_slide_items)
