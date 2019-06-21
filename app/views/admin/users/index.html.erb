@@ -1,18 +1,38 @@
 <div class="container">
+  <%= search_form_for @search, url: search_path, remote: true, method: :post do |f| %>
+       <%= f.condition_fields do |c| %>
+         <div class="form-group col-md-3">
+            <%= c.attribute_fields do |a| %>
+              <%= a.attribute_select %>
+            <% end %>
+         </div>
+         <div class="form-group col-md-3">
+           <%= c.predicate_select only: [:cont, :lteq, :gteq], class: "form-control"%>
+         </div>
+         <div class="form-group col-md-3">
+            <%= c.value_fields do |v| %>
+              <%= v.text_field :value, class: "form-control" %>
+            <%end %>
+         </div>
+        <div class="form-group col-md-3">
+          <%= f.submit t(".search"), class: "btn btn-success" %>
+        </div>
+      <% end %>
+  <% end %>
   <h1><%= t ".list_user" %></h1>
   <h3><%= t ".total_user" %>: <%= User.all.size %> </h3>
   <table class="table table-striped">
     <thead>
       <tr>
         <th><%= t ".image" %></th>
-        <th><%= t ".name" %></th>
+        <th><%= sort_link @search,:name, (t".name") %></th>
         <th><%= t ".email" %></th>
         <th><%= t ".phone" %></th>
         <th><%= t ".total_order" %></th>
         <th><%= t ".control" %></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="list-user">
       <%= render @user %>
     </tbody>
   </table>

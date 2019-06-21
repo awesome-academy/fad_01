@@ -1,7 +1,7 @@
 <% unless user.admin? %>
   <tr>
     <td  class="admin_user_images"><%= image_tag user.picture.url.to_s %></td>
-    <td><%= link_to user.name, user_path(user) %></td>
+    <td><%= link_to user.name, users_show_path(user) %></td>
     <td><%= user.email %></td>
     <td><%= user.phone %></td>
     <td><%= user.orders.size %></td>
